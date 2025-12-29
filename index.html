@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Pricing Plans | Choose Your Growth Path</title>
+
+    <!-- Using Inter font for that clean, modern SaaS look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <header class="pricing-header">
+            <span class="badge-pill">Simple Pricing</span>
+            <h1>Choose the right plan for you</h1>
+            <p class="subtitle">Fair pricing for everyone. Whether you're just starting out or scaling a global
+                enterprise, we have a plan that fits your needs.</p>
+
+            <!-- Toggle switch for billing cycle -->
+            <div class="billing-toggle-wrapper">
+                <span class="billing-label">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="billing-cycle-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="billing-label">Yearly <span class="discount-tag">Save 20%</span></span>
+            </div>
+        </header>
+
+        <div class="pricing-grid">
+            <!-- Free Tier -->
+            <div class="card pricing-card">
+                <div class="card-header">
+                    <h2 class="plan-title">Free</h2>
+                    <p class="plan-desc">Essential tools for hobbyists.</p>
+                </div>
+
+                <div class="price-container">
+                    <span class="currency">R</span>
+                    <span class="amount" id="price-free">0</span>
+                    <span class="period" id="period-free">/mo</span>
+                </div>
+                <p class="billing-note">Forever free, no credit card needed.</p>
+
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 1 Active Project</li>
+                        <li><i class="fas fa-check-circle"></i> 1GB Cloud Storage</li>
+                        <li><i class="fas fa-check-circle"></i> Basic Templates</li>
+                        <li><i class="fas fa-check-circle"></i> Community Forum Access</li>
+                        <li class="unavailable"><i class="fas fa-times-circle"></i> Advanced Analytics</li>
+                        <li class="unavailable"><i class="fas fa-times-circle"></i> Custom Domain</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-outline" onclick="selectPlan('Free')">Get Started</button>
+                </div>
+            </div>
+
+            <!-- Starter Tier -->
+            <div class="card pricing-card">
+                <div class="card-header">
+                    <h2 class="plan-title">Starter</h2>
+                    <p class="plan-desc">For creators and small teams.</p>
+                </div>
+
+                <div class="price-container">
+                    <span class="currency">R</span>
+                    <span class="amount" id="price-starter">229</span>
+                    <span class="period" id="period-starter">/mo</span>
+                </div>
+                <p class="billing-note" id="note-starter">Billed monthly</p>
+
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 5 Active Projects</li>
+                        <li><i class="fas fa-check-circle"></i> 10GB Cloud Storage</li>
+                        <li><i class="fas fa-check-circle"></i> All Templates Access</li>
+                        <li><i class="fas fa-check-circle"></i> Email Support</li>
+                        <li><i class="fas fa-check-circle"></i> Basic Analytics</li>
+                        <li class="unavailable"><i class="fas fa-times-circle"></i> Custom Domain</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-primary-light" onclick="selectPlan('Starter')">Start Free Trial</button>
+                </div>
+            </div>
+
+            <!-- Professional Tier (Highlighted) -->
+            <div class="card pricing-card popular">
+                <div class="popular-badge">MOST POPULAR</div>
+                <div class="card-header">
+                    <h2 class="plan-title">Professional</h2>
+                    <p class="plan-desc">Everything you need to grow.</p>
+                </div>
+
+                <div class="price-container">
+                    <span class="currency">R</span>
+                    <span class="amount" id="price-pro">549</span>
+                    <span class="period" id="period-pro">/mo</span>
+                </div>
+                <p class="billing-note" id="note-pro">Billed monthly</p>
+
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 20 Active Projects</li>
+                        <li><i class="fas fa-check-circle"></i> 50GB Cloud Storage</li>
+                        <li><i class="fas fa-check-circle"></i> Priority Email Support</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Analytics</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Domain</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="selectPlan('Professional')">Start Free Trial</button>
+                </div>
+            </div>
+
+            <!-- Business Tier -->
+            <div class="card pricing-card">
+                <div class="card-header">
+                    <h2 class="plan-title">Business</h2>
+                    <p class="plan-desc">Scale your operations.</p>
+                </div>
+
+                <div class="price-container">
+                    <span class="currency">R</span>
+                    <span class="amount" id="price-business">1,099</span>
+                    <span class="period" id="period-business">/mo</span>
+                </div>
+                <p class="billing-note" id="note-business">Billed monthly</p>
+
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 50 Active Projects</li>
+                        <li><i class="fas fa-check-circle"></i> 200GB Cloud Storage</li>
+                        <li><i class="fas fa-check-circle"></i> Phone & Email Support</li>
+                        <li><i class="fas fa-check-circle"></i> Team Collaboration</li>
+                        <li><i class="fas fa-check-circle"></i> Multiple Domains</li>
+                        <li><i class="fas fa-check-circle"></i> White-labeling</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-primary-light" onclick="selectPlan('Business')">Start Free Trial</button>
+                </div>
+            </div>
+
+            <!-- Enterprise Tier -->
+            <div class="card pricing-card enterprise">
+                <div class="card-header">
+                    <h2 class="plan-title">Enterprise</h2>
+                    <p class="plan-desc">Maximum power and control.</p>
+                </div>
+
+                <div class="price-container">
+                    <span class="currency">R</span>
+                    <span class="amount" id="price-enterprise">1,899</span>
+                    <span class="period" id="period-enterprise">/mo</span>
+                </div>
+                <p class="billing-note" id="note-enterprise">Billed monthly</p>
+
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Projects</li>
+                        <li><i class="fas fa-check-circle"></i> 1TB Cloud Storage</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 Dedicated Support</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Integrations</li>
+                        <li><i class="fas fa-check-circle"></i> SSO & Advanced Security</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-dark" onclick="selectPlan('Enterprise')">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="trusted-by">
+            <p>Trusted by over 10,000+ companies worldwide</p>
+            <div class="logo-grid">
+                <i class="fab fa-apple"></i>
+                <i class="fab fa-google"></i>
+                <i class="fab fa-amazon"></i>
+                <i class="fab fa-microsoft"></i>
+                <i class="fab fa-facebook"></i>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 class="section-title">Common Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Can I change plans later?</h3>
+                    <p>Yes, you can upgrade or downgrade your plan at any time. If you upgrade, the change is
+                        immediate. If you downgrade, it will take effect at the end of your billing cycle.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a free trial for paid plans?</h3>
+                    <p>Absolutely! All our paid plans come with a 14-day free trial. No credit card required to start
+                        testing.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We accept all major credit cards, PayPal, and even EFT for our enterprise customers in South
+                        Africa.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Special pricing for non-profits?</h3>
+                    <p>Yes, we love supporting good causes! Contact our support team with your NPO details for a 50%
+                        discount.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pricing-footer">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <p>&copy; 2025 Themba Dev Hub. Prices are in ZAR. VAT included.</p>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
